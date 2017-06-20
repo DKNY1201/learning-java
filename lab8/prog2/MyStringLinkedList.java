@@ -77,12 +77,15 @@ public class MyStringLinkedList {
       if (temp.value.equals(data)) {
         temp.previous.next = temp.next;
         temp.next.previous = temp.previous;
-        temp.next = null;
-        temp.previous = null;
+        temp = null;
         return true;
       }
       temp = temp.next;
     }
+    return false;
+  }
+  
+  boolean remove(int index) {
     return false;
   }
 	
@@ -151,6 +154,13 @@ public class MyStringLinkedList {
       }
       temp = temp.next;
     }
+    return null;
+  }
+  
+  public Node getNodeByPosUsingForLoop(int pos) {
+    // for loop from 0 -> pos
+    Node temp = header;
+//    for (int i = 0; i <)
     return null;
   }
   
@@ -245,5 +255,6 @@ public class MyStringLinkedList {
     System.out.println("Search: ");
     System.out.println("keyword = \"tiny\": " + list.search("tiny"));
     System.out.println("keyword = \"number\": " + list.search("number"));
+    System.out.println(list.remove("miniscule"));
   }
 }

@@ -15,7 +15,7 @@ public class MyStringStack {
   }
   
   public String pop() {
-    String data = list.getNodeByPos(0).value;
+    String data = peek();
     list.remove(data);
     return data;
   }

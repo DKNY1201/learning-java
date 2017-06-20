@@ -48,7 +48,7 @@ public class Address {
 	@SuppressWarnings("serial")
 	public List<String> asList() {
 		return new ArrayList<String>() {
-			{
+			{ // Object Initialized Block
 				add(name);
 				add(street);
 				add(city);

@@ -76,13 +76,37 @@ public class MyStringLinkedList {
     while (temp != null) {
       if (temp.value.equals(data)) {
         temp.previous.next = temp.next;
-        temp.next.previous = temp.previous;
-        temp.next = null;
-        temp.previous = null;
+        if (temp.next != null) {
+          temp.next.previous = temp.previous;
+        }
+        temp = null;
         return true;
       }
       temp = temp.next;
     }
+    return false;
+  }
+  
+  boolean remove(int index) {
+    if (header.next == null) {
+      return false;
+    }
+    
+    Node temp = header.next;
+    
+    int count = 0;
+    while (temp != null) {
+      if (count == index) {
+        temp.previous.next = temp.next;
+        if (temp.next != null) {
+          temp.next.previous = temp.previous;
+        }
+        temp = null;
+        return true;
+      }
+      temp = temp.next;
+    }
+    
     return false;
   }
 	
@@ -245,5 +269,6 @@ public class MyStringLinkedList {
     System.out.println("Search: ");
     System.out.println("keyword = \"tiny\": " + list.search("tiny"));
     System.out.println("keyword = \"number\": " + list.search("number"));
+    System.out.println(list.remove(list.getSize()-1));
   }
 }

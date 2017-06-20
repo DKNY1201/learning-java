@@ -36,13 +36,13 @@ public class SymbolBalancer {
     char[] open = new char[len/2];
     char[] close = new char[len/2];
     
-    int countOpen = 0;
-    int countClose = 0;
+//    int countOpen = 0;
+//    int countClose = 0;
     for (int i = 0; i < len; i++) {
       if (i % 2 == 0) {
-        open[countOpen++] = delimiters.charAt(i);
+        open[i/2] = delimiters.charAt(i);
       } else {
-        close[countClose++] = delimiters.charAt(i);
+        close[i/2] = delimiters.charAt(i);
       }
     }
     

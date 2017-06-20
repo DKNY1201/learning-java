@@ -25,12 +25,10 @@ public class Main {
 	}
 	
 	private String formatFields(List<String> list) {
-	  String result = String.format("%s%n%s%n%s, %s, %s%n", 
-	                    list.get(0), 
-	                    list.get(1), 
-	                    list.get(2), 
-	                    list.get(3), 
-	                    list.get(4));
+	  String arrStr[] = list.toArray(new String[0]);
+//	  String arrStr1[] = list.toArray(new String[list.size()]);
+	  
+	  String result = String.format("%s%n%s%n%s, %s, %s%n", arrStr);
 		return result;
 	}
 	

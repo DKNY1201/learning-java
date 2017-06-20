@@ -7,11 +7,12 @@ public class Schur {
     HashMap<Integer, Boolean> hash = new HashMap<Integer, Boolean>();
     
     for (Integer i: list) {
+      
       if (hash.containsKey(z - i)) {
         return true;
       }
-      
       hash.put(i, true);
+     
     }
     
     return false;
@@ -22,7 +23,7 @@ public class Schur {
     List<Integer> l = new ArrayList<Integer>();
     l.add(3);
     l.add(4);
-    l.add(6);
+    l.add(3);
     l.add(5);
     l.add(11);
     l.add(20);
